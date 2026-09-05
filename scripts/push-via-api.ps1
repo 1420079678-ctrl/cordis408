@@ -16,8 +16,9 @@ function Invoke-Gh([string]$path, [object]$obj) {
   return (gh api $path -X POST --input $tmp | ConvertFrom-Json)
 }
 
-Write-Host "收集受版本管理的文件（git ls-files）..." -ForegroundColor Cyan
-$files = git ls-files
+Write-Host "收集工作区文件（先 git add -A 纳入新文件，再枚举；.gitignore 自动生效）..." -ForegroundColor Cyan
+git add -A
+$files = @(git ls-files) | Sort-Object -Unique
 Write-Host "共 $($files.Count) 个文件，开始创建 blobs..." -ForegroundColor Cyan
 $tree = @()
 $i = 0
