@@ -1,0 +1,15 @@
+# Java / Maven
+backend/target/
+*.class
+# Node / Vite
+frontend/node_modules/
+frontend/dist/
+# IDE / OS
+.idea/
+.vscode/
+*.iml
+.DS_Store
+# 运行日志 / 临时
+backend/target/run.*.log
+_paper_text.txt
+_shot_*.png

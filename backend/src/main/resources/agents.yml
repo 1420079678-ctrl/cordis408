@@ -1,0 +1,47 @@
+# =====================================================================
+# Cordis408 声明式 Agent 编排（论文 §5.2 Declarative Configuration）
+# 每个条目对应一个 Fiber；运行时按 inject/provide 自动决定激活顺序，
+# 与书写顺序无关（Theorem 63：依赖只约束“何时激活”，不约束加载顺序）。
+# 运行期可通过管理接口热改本配置（reconcile）、热替换（hot-reload）。
+# =====================================================================
+components:
+  # ---- 基础协效果提供者（先被其它组件依赖）----
+  - id: learner-model
+    type: learner-model
+    disabled: false
+
+  - id: retrieval
+    type: retrieval
+    disabled: false
+
+  - id: router
+    type: router
+    disabled: false
+
+  # ---- 四学科专家：同一组件定义 subject-expert 的四个实例 ----
+  - id: expert-ds
+    type: subject-expert
+    config: { subject: ds }
+  - id: expert-co
+    type: subject-expert
+    config: { subject: co }
+  - id: expert-cn
+    type: subject-expert
+    config: { subject: cn }
+  - id: expert-os
+    type: subject-expert
+    config: { subject: os }
+
+  # ---- 教学能力组件 ----
+  - id: tutor
+    type: tutor
+  - id: problem
+    type: problem
+  - id: diagnosis
+    type: diagnosis
+  - id: planner
+    type: planner
+
+  # ---- 总控门面（依赖上面全部能力）----
+  - id: supervisor
+    type: supervisor

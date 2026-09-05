@@ -1,0 +1,67 @@
+/* =========================================================
+   Cordis408 Design Tokens —— 以黄金分割 φ=1.618 为模数的专业学术设计系统
+   间距 / 字号 / 行高沿 φ 数列展开，形成自洽、和谐的比例关系
+   ========================================================= */
+:root {
+  /* φ 模数尺度：每级 ≈ 上一级 × 1.618（取整），用于间距、圆角、字号 */
+  --u1: 4px;
+  --u2: 6px;
+  --u3: 10px;
+  --u4: 16px;   /* 基准间距 */
+  --u5: 26px;
+  --u6: 42px;
+  --u7: 68px;
+  --phi: 1.61803398875;
+
+  /* 主色：深墨青 + 青蓝，暖金点缀 */
+  --ink-900: #0e2430;
+  --ink-800: #143444;
+  --ink-700: #1d4658;
+  --brand-600: #16697a;
+  --brand-500: #1b7f92;
+  --brand-400: #3aa0b3;
+  --brand-050: #eaf3f5;
+  --gold-500: #c9a24b;
+  --gold-400: #d8b968;
+  --gold-050: #faf4e4;
+
+  /* 纸感中性色（长时间阅读，暖白底） */
+  --bg: #f4f3ef;
+  --bg-soft: #ecebe5;
+  --surface: #ffffff;
+  --surface-2: #faf9f6;
+  --line: #e3e0d8;
+  --line-strong: #d2cec2;
+
+  --text-1: #1a252d;
+  --text-2: #4d5a64;
+  --text-3: #828c94;
+  --text-inv: #f6f8f9;
+
+  /* 四学科识别色 */
+  --ds: #2e8b74;  --ds-soft: #e3f1ed;
+  --co: #c0622e;  --co-soft: #f8ebe1;
+  --cn: #2f63b3;  --cn-soft: #e6edf8;
+  --os: #a8533f;  --os-soft: #f7e9e5;
+
+  /* Fiber 生命周期状态色（与后端 FiberState 一一对应） */
+  --st-active: #22986a;   --st-active-soft: #e2f4ec;
+  --st-loading: #2f7fd0;  --st-loading-soft: #e6f0fb;
+  --st-inactive: #94a0a8; --st-inactive-soft: #edf0f2;
+  --st-unloading: #d08a1e;--st-unloading-soft: #faf1dd;
+  --st-failed: #d0453b;   --st-failed-soft: #fbe7e5;
+
+  /* 字体 */
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", "Cascadia Code", Consolas, "Courier New", monospace;
+
+  /* 阴影：极轻柔，分层 */
+  --shadow-1: 0 1px 2px rgba(14,36,48,.05), 0 2px 6px rgba(14,36,48,.05);
+  --shadow-2: 0 2px 6px rgba(14,36,48,.07), 0 12px 30px rgba(14,36,48,.09);
+  --shadow-pop: 0 8px 28px rgba(14,36,48,.16);
+
+  --r-sm: 8px; --r-md: 12px; --r-lg: 18px; --r-xl: 26px;
+  --sidebar-w: 248px;
+  --ease-phi: cubic-bezier(.25, .8, .35, 1);
+}

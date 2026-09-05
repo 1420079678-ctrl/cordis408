@@ -1,0 +1,7 @@
+# 统一文本换行，避免 Windows/macOS 协作时反复变更
+* text=auto eol=lf
+*.ps1 text eol=crlf
+*.bat text eol=crlf
+*.png binary
+*.jpg binary
+*.jar binary

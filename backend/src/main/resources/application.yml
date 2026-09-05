@@ -1,0 +1,29 @@
+server:
+  port: 8080
+  servlet:
+    encoding:
+      charset: UTF-8
+      force: true
+
+spring:
+  application:
+    name: cordis408-backend
+  jackson:
+    default-property-inclusion: non_null
+
+# ===== 大模型接入（默认关闭：离线即可完整运行）=====
+# 启用示例（DeepSeek，OpenAI 兼容）：
+#   llm.enabled=true，填入 api-key 后重启即可；调用失败会自动降级回内置引擎
+llm:
+  enabled: false
+  provider: builtin
+  base-url: https://api.deepseek.com
+  api-key: ""
+  model: deepseek-chat
+  temperature: 0.3
+  max-tokens: 1600
+  timeout-seconds: 60
+
+logging:
+  level:
+    io.cordis408: INFO
